@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regex 101</title>
+  <script>
+    if (typeof previous_input_string !== "undefined") {
+      document.getElementById("Input_String").value = previous_input_string;
+    }
+  </script>
+</head>
+<body>
+  <h1>Welcome to Regex 101</h1>
+
+  <form action="/" method="POST">
+    <textarea id="Input_String" name="Input_String" rows="5" cols="30" placeholder="Enter String Here"></textarea>
+    <br>
+    <input type="text" name="Test_String" placeholder="Enter Regex Pattern">
+    <br>
+    <button type="submit">Search</button>
+    </form>
+
+  
+    {% if matches %}
+  <h2>Matched Information</h2>
+  <p id="match-output">{{ matches | join(', ') }}</p>
+  <button type="button" id="clear-button">Clear</button>
+{% else %}
+  <p>No matches found.</p>
+{% endif %}
+
+    
+</body>
+</html>
